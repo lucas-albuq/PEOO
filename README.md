@@ -1,6 +1,6 @@
 # PEOO
 
-### Repositório reservado a resolução das listas de exercícios passadas na matéria de PEOO (Programação estruturada e Orientada a Objetos.
+### Repositório reservado a resolução das listas de exercícios passadas na matéria de PEOO (Programação estruturada e Orientada a Objetos).
 
 
 
