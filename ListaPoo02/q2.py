@@ -64,6 +64,6 @@ class UI:
     x.get_nota3()                      
     x.set_nota4(int(input('Digite a nota 4: \n)))   
     x.get_nota4()
-                          
+ UI.main()                         
                           
                           
