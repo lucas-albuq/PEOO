@@ -47,6 +47,6 @@ class Entrada:
 
 entrada = Entrada()
 entrada.dia = input('Qual o dia da semana? \n')
-entrada.horario, aux= map(int, input('Digite o horário em que deseja ir (hh:mm): \n'))
+entrada.horario, aux= map(int, input('Digite o horário em que deseja ir (hh:mm): \n').split(':'))
 print(f'Você pagará R${entrada.valorEntrada()} em uma entrada.')
 print(f'Você pagará R${entrada.valorMeiaEntrada()} em uma meia-entrada.')
