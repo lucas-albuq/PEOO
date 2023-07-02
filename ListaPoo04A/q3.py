@@ -1,5 +1,3 @@
-#INCOMPLETO DEVIDO A PROBLEMAS DE RECURSIVIDADE!!!(ainda vou ajeitar)
-
 class Cliente:
   def __init__(self, nome, cpf, limite):
     self.__nome = nome
@@ -12,7 +10,7 @@ class Cliente:
       self.__socio.SetSocio(self)
   def GetLimite(self):
     if self.__socio != None:
-      return self.__limite + self.__socio.GetLimite()
+      return self.__limite + self.__socio.__limite
     return self.__limite
   def __str__(self):
     return f'Nome - {self.__nome}\nCPF - {self.__cpf}\nLimite - {self.__limite}\nSocio - {self.__socio}'
