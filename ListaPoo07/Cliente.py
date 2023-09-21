@@ -1,14 +1,15 @@
 import json
 
 
+#classe Cliente, usando métodos set/get e o ToString
 class Cliente:
   def __init__(self, id, nome, email, fone):
     self.__id  = id
     self.__nome = nome
     self.__email = email
     self.__fone = fone
-  def set_id(self, nID):
-    self.__id = nID
+  def set_id(self, nId):
+    self.__id = nId
   def set_nome(self, nNome):
     self.__nome = nNome
   def set_email(self, nEmail):
@@ -23,7 +24,10 @@ class Cliente:
     return self.__email
   def get_fone(fone):
     return self.__fone
+  def __str__(self):
+    return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone}"
 
+#classe NCliente
 class NCliente:
   __clientes = []
 
