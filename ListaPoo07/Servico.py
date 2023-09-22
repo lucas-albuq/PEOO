@@ -29,7 +29,46 @@ class Servico:
 class NServico:
   __servicos = []
 
-  @clasmethod
+  @classmethod
+  def inserir(cls, obj):
+    NServico.abrir()
+    id = 0
+    for servico in cls.__servicos:
+      if servico.get_id() > id: id = servico.get_id()
+    obj.set_id(id)
+    cls.__servicos.append(obj)
+    NServico.salvar()
+
+  @classmethod
+  def listar(cls):
+    NServico.abrir()
+    return cls.__servicos
+
+  @classmethod
+  def listar_id(cls, id):
+    NServico.abrir()
+    for servico in cls.__servicos:
+      if servico.get_id() == id: return servico
+    return None
+
+  @classmethod
+  def atualizar(cls, obj):
+    NServico.abrir()
+    servico = NServico.listar_id(obj.get_id())
+    if servico != None:
+      servico.set_descricao(obj.get_descricao())
+      servico.set_valor(obj.get_valor())
+      servico.set_duracao(obj.get_duracao())
+      NServico.salvar()
+
+  @classmethod
+  def excluir(cls, obj):
+    NServico.abrir()
+    servico = NServico.listar_id(obj.get_id())
+    cls.__servicos.remove(servico)
+    NServico.salvar()
+  
+  @classmethod
   def abrir(cls):
     try:
       cls.__servicos = []

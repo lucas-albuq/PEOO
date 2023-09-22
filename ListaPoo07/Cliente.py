@@ -57,9 +57,11 @@ class NCliente:
   def atualizar(cls, obj):
     NCliente.abrir()
     cliente = NCliente.listar_id(obj.get_id())
-    cliente.set_nome(obj.get_nome())
-    cliente.set_email(obj.get_email())
-    cliente.set_fone(obj.get_fone())
+    if cliente != None:
+      cliente.set_nome(obj.get_nome())
+      cliente.set_email(obj.get_email())
+      cliente.set_fone(obj.get_fone())
+      NCliente.salvar()
   
   @classmethod
   def excluir(cls, obj):
